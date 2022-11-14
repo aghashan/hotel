@@ -26,6 +26,12 @@
                 Jumbotron
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('admin/jumbotron*') ? 'active' : '' }}" href="/secret/admin/usermanage">
+                <span data-feather="file-text" class="align-text-bottom"></span>
+                User Manage
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
