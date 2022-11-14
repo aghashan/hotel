@@ -24,6 +24,7 @@ Route::get('/userinfo', 'App\Http\Controllers\Usercontrollers@user');
 Route::post('/userlog', 'App\Http\Controllers\Usercontrollers@login');
 Route::post('/regis', 'App\Http\Controllers\Usercontrollers@register');
 Route::get('/regis', 'App\Http\Controllers\Usercontrollers@register');
+Route::get('/booking','App\Http\Controllers\Bookcontrollers@book');
 
 
 Route::group(['prefix' => 'secret'], function () {
@@ -32,14 +33,17 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
             Route::get('/edit', 'App\Http\Controllers\Roomscontrollers@edit');
+            Route::get('/add','App\Http\Controllers\Roomscontrollers@create');
         });
         Route::group(['prefix' => 'special'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@special');
             Route::get('/edit', 'App\Http\Controllers\Specialcontroller@edit');
+            Route::get('/create', 'App\Http\Controllers\Specialcontroller@create');
         });
         Route::group(['prefix' => 'jumbotron'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
+            Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@create');
         });
     });
 });

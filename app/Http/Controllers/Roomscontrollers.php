@@ -24,6 +24,10 @@ class Roomscontrollers extends Controller
         return view('/detail/Roomdetail')->with('data', $data);
     }
 
+public function create(){
+    return view('/admin/room/create');
+}
+
     public function edit(Request $request)
     {
        return view('/admin/room/edit');

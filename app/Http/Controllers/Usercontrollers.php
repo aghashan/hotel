@@ -15,17 +15,17 @@ class usercontrollers extends Controller
     }
     public function login(Request $request)
     {
-        $data = [
-            'username' => $request['username'],
-            'password' => $request['password'],
-            'role'=>
-        ];
+        // $data = [
+        //     'username' => $request['username'],
+        //     'password' => $request['password'],
+        //     'role'=>
+        // ];
 
-        if (Auth::attempt($data)) {
-            return redirect('/room');
-        } else {
-            return redirect('/');
-        }
+        // if (Auth::attempt($data)) {
+        //     return redirect('/room');
+        // } else {
+        //     return redirect('/');
+        // }
     }
 
     public function register(Request $request)

@@ -5,7 +5,7 @@
         <h1 class="h2">Room</h1>
     </div>
      <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-        <a href="/admin/room/create" class="btn btn-primary me-md-2" type="button">Tambah</a>
+        <a href="/secret/admin/room/edit" class="btn btn-primary me-md-2" type="button">Tambah</a>
        
       </div>
       <div class="table-responsive">

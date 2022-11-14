@@ -5,7 +5,7 @@
         <h1 class="h2">Jumbotron</h1>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-        <a href="/admin/jumbotron/create" class="btn btn-primary me-md-2" type="button">Button</a>
+        <a href="/secret/admin/jumbotron/create" class="btn btn-primary me-md-2" type="button">Button</a>
        
       </div>
         <table class="table table-bordered">
