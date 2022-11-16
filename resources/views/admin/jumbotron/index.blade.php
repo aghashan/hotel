@@ -16,21 +16,15 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($data as $d)
               <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{$d['image']}}</th>
                 <td>
                   <a href="/secret/admin/jumbotron/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                   <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-               
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-               
-              </tr>
+              @endforeach
             </tbody>
           </table>
           @endsection

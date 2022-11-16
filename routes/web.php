@@ -45,5 +45,10 @@ Route::group(['prefix' => 'secret'], function () {
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
             Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@create');
         });
+        Route::group(['prefix'=>'usermanage'],function(){
+            Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
+            Route::get('/edit', 'App\Http\Controllers\Usercontrollers@edit');
+            Route::get('/create', 'App\Http\Controllers\Usercontrollers@create');
+        });
     });
 });
