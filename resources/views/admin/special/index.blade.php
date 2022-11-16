@@ -6,7 +6,6 @@
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
   <a href="/secret/admin/special/create" class="btn btn-primary me-md-2" type="button">Tambah</a>
-
 </div>
 <table class="table table-bordered">
   <thead>
