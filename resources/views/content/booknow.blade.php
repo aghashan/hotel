@@ -51,7 +51,7 @@
                                     <div class="form-group">
                                         <span class="form-label">Payment</span>
                                         <select class="form-control">
-                                            <option>1</option>
+                                            <option>kontol</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
