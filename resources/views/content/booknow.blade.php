@@ -52,7 +52,7 @@
                                         <span class="form-label">Payment</span>
                                         <select class="form-control">
                                             <option>kontol</option>
-                                            <option>2</option>
+                                            <option>asu</option>
                                             <option>3</option>
                                             <option>4</option>
                                             <option>5</option>
