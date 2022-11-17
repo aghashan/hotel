@@ -36,7 +36,7 @@
                 </tr>
             </table>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                <button class="btn btn-primary" type="button">BOOK NOW!</button>
+                <a href="/room/booking" class="btn btn-primary" type="button">BOOK NOW!</a>
             </div>
         </div>
     </div>

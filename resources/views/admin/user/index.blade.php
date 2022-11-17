@@ -29,7 +29,7 @@
             <td>{{$d['no_tlp']}}</td>
             <td>
                 <a href="/secret/admin/usermanage/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
-                <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                <a href="/secret/admin/usermanage/delete/{{$d['id']}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
         @endforeach

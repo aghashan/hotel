@@ -19,12 +19,12 @@ Route::get('/login', 'App\Http\Controllers\Indexcontrollers@login');
 Route::group(['prefix' => '/room'], function () {
     Route::get('/', 'App\Http\Controllers\Roomscontrollers@room');
     Route::get('/roomdetail', 'App\Http\Controllers\Roomscontrollers@viewroom');
+    Route::get('/booking', 'App\Http\Controllers\Bookcontrollers@book');
 });
 Route::get('/userinfo', 'App\Http\Controllers\Usercontrollers@user');
 Route::post('/userlog', 'App\Http\Controllers\Usercontrollers@login');
 Route::post('/regis', 'App\Http\Controllers\Usercontrollers@register');
 Route::get('/regis', 'App\Http\Controllers\Usercontrollers@register');
-Route::get('/booking','App\Http\Controllers\Bookcontrollers@book');
 
 
 Route::group(['prefix' => 'secret'], function () {
@@ -33,7 +33,7 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
             Route::get('/edit', 'App\Http\Controllers\Roomscontrollers@edit');
-            Route::get('/add','App\Http\Controllers\Roomscontrollers@create');
+            Route::get('/add', 'App\Http\Controllers\Roomscontrollers@create');
         });
         Route::group(['prefix' => 'special'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@special');
@@ -45,10 +45,12 @@ Route::group(['prefix' => 'secret'], function () {
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
             Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@create');
         });
-        Route::group(['prefix'=>'usermanage'],function(){
+        Route::group(['prefix' => 'usermanage'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
             Route::get('/edit', 'App\Http\Controllers\Usercontrollers@edit');
+            Route::post('/create', 'App\Http\Controllers\Usercontrollers@create');
             Route::get('/create', 'App\Http\Controllers\Usercontrollers@create');
+            Route::get('/delete/{id}', 'App\Http\Controllers\Usercontrollers@destroy');
         });
     });
 });

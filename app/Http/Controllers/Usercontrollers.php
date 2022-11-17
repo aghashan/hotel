@@ -15,17 +15,16 @@ class usercontrollers extends Controller
     }
     public function login(Request $request)
     {
-        // $data = [
-        //     'username' => $request['username'],
-        //     'password' => $request['password'],
-        //     'role'=>
-        // ];
 
-        // if (Auth::attempt($data)) {
-        //     return redirect('/room');
-        // } else {
-        //     return redirect('/');
-        // }
+        $data = [
+            'username' => $request['username'],
+            'password' => $request['password']
+        ];
+        if (Auth::attempt($data)) {
+            return redirect('/room');
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function register(Request $request)
@@ -49,7 +48,9 @@ class usercontrollers extends Controller
         }
     }
 
-    public function create(Request $request){
+    public function create(Request $request)
+    {
+    
         $validasi = \Validator::make($request->all(), [
             'no_tlp' => 'required',
             'email' => 'required',
@@ -65,10 +66,19 @@ class usercontrollers extends Controller
             $user->username = $request['username'];
             $user->password = Hash::make($request['password']);
             $user->save();
-            return redirect('/secret/admin/usermanage/index');
+            return redirect('/secret/admin/usermanage/');
         }
     }
-    public  function edit(){
+    public  function edit()
+    {
         return view('/admin/user/edit');
+    }
+
+    public function destroy($id)
+    {
+        $grup = User::where('id', $id)->delete();
+        if ($grup) {
+            return redirect('/secret/admin/usermanage');
+        }
     }
 }
