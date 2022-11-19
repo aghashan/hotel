@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class jumbotron extends Model
 {
     use HasFactory;
-    protected $table = 'jumbroton';
-
+  
 }

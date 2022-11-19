@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\JombrotonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,11 +44,16 @@ Route::group(['prefix' => 'secret'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
             Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@create');
+            // Route::get('/uploads', 'Jumbotroncontrollers@upload')->name('uploads');
+            Route::post('/save', 'App\Http\Controllers\Jumbotroncontrollers@store')->name('image');
         });
         Route::group(['prefix'=>'usermanage'],function(){
             Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
             Route::get('/edit', 'App\Http\Controllers\Usercontrollers@edit');
             Route::get('/create', 'App\Http\Controllers\Usercontrollers@create');
+            
         });
     });
 });
+
+Route::resource('admin/jumbotron', JombrotonController::class);

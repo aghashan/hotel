@@ -5,7 +5,7 @@
         <h1 class="h2">Jumbotron</h1>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-        <a href="/secret/admin/jumbotron/create" class="btn btn-primary me-md-2" type="button">Button</a>
+        <a href="/admin/jumbotron/create" class="btn btn-primary me-md-2" type="button">Button</a>
        
       </div>
         <table class="table table-bordered">
@@ -16,15 +16,15 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($data as $d)
+              {{-- @foreach($data as $d) --}}
               <tr>
-                <th scope="row">{{$d['image']}}</th>
+                {{-- <th scope="row">{{$d['image']}}</th> --}}
                 <td>
                   <a href="/secret/admin/jumbotron/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                   <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                 </td>
               </tr>
-              @endforeach
+              {{-- @endforeach --}}
             </tbody>
           </table>
           @endsection
