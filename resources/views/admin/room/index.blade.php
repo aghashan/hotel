@@ -5,8 +5,7 @@
   <h1 class="h2">Room</h1>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-  <a href="/secret/admin/room/edit" class="btn btn-primary me-md-2" type="button">Tambah</a>
-
+    <a href="/secret/admin/usermanage/create" class="btn btn-success me-md-2" type="button"><i class="fa-solid fa-plus"></i> Tambah</a>
 </div>
 <div class="table-responsive">
   <table class="table table-striped table-bordered">

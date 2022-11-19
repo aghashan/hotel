@@ -4,8 +4,7 @@
     <h1 class="h2">Tambah User</h1>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-    <a href="/secret/admin/usermanage/create" class="btn btn-primary me-md-2" type="button">Tambah</a>
-
+    <a href="/secret/admin/usermanage/create" class="btn btn-success me-md-2" type="button"><i class="fa-solid fa-plus"></i> Tambah</a>
 </div>
 <table class="table table-bordered">
     <thead>
@@ -24,7 +23,7 @@
         <tr>
             <td>{{$d['username']}}</td>
             <td>{{$d['email']}}</td>
-            <td>{{$d['passsword']}}</td>
+            <td>{!! Str::limit ($d['password'],30)!!}</td>
             <td>role</td>
             <td>{{$d['no_tlp']}}</td>
             <td>
