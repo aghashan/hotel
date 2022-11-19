@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Jumbotroncontrollers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,7 +44,8 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'jumbotron'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
-            Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@create');
+            Route::post('/store', 'App\Http\Controllers\Jumbotroncontrollers@store')->name('image');
+            Route::get('/store', 'App\Http\Controllers\Jumbotroncontrollers@store')->name('image');
         });
         Route::group(['prefix' => 'usermanage'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
@@ -53,4 +55,6 @@ Route::group(['prefix' => 'secret'], function () {
             Route::get('/delete/{id}', 'App\Http\Controllers\Usercontrollers@destroy');
         });
     });
+
+   
 });
