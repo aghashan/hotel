@@ -17,7 +17,7 @@ class Jumbotroncontrollers extends Controller
             return view('/admin/jumbotron/create');
         } else {
             if ($request->hasfile('image')) {
-                $path = $request->file('image')->store('uploads');
+                $path = $request->file('image')->store('images');
             } else {
                 $path = '';
             }
