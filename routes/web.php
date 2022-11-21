@@ -39,7 +39,8 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'special'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@special');
             Route::get('/edit', 'App\Http\Controllers\Specialcontroller@edit');
-            Route::get('/create', 'App\Http\Controllers\Specialcontroller@create');
+            Route::post('/create', 'App\Http\Controllers\Specialcontroller@store');
+            Route::get('/create', 'App\Http\Controllers\Specialcontroller@store');
         });
         Route::group(['prefix' => 'jumbotron'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');

@@ -6,15 +6,15 @@
     </div>
 
     <div class="col-lg-8">
-    <form method="post" action="/admin/room">
+    <form method="post" action="/secret/admin/special/create" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-          <label for="name" class="form-label">isi</label>
-          <input type="text" class="form-control" id="name" name="name">
+          <label for="deskripsi" class="form-label">isi</label>
+          <input type="text" class="form-control" id="deskripsi" name="deskripsi">
         </div>
         <div class="mb-3">
-            <label for="formFile" class="form-label">Gambar</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="image" class="form-label">Gambar</label>
+            <input class="form-control" type="file" id="image" name="image">
           </div>
       <button type="submit" class="btn btn-primary">Tambah</button>
     </form>  

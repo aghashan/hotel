@@ -5,7 +5,7 @@
         <div class="carousel-inner">
             @foreach($data as $d)
             <div class="carousel-item active ">
-                <img src="{{$d['image']}}" class="d-block w-100 foto" alt="...">
+                <img src="{{asset('/storage/'.$d->image)}}" class="d-block w-100 foto" alt="...">
             </div>
             @endforeach
         </div>

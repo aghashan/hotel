@@ -5,7 +5,7 @@
   <h1 class="h2">Special</h1>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-    <a href="/secret/admin/usermanage/create" class="btn btn-success me-md-2" type="button"><i class="fa-solid fa-plus"></i> Tambah</a>
+    <a href="/secret/admin/special/create" class="btn btn-success me-md-2" type="button"><i class="fa-solid fa-plus"></i> Tambah</a>
 </div>
 <table class="table table-bordered">
   <thead>
@@ -16,14 +16,18 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($data as $d)
     <tr>
-      <th scope="row">1</th>
-      <td>dadadd</td>
+      <td>
+        <img src="{{asset('/storage/'.$d->image)}}" alt="" class="img-thumbnail img-responsive" width="100" height="50">
+      </td>
+      <td>{{ $d['deskripsi'] }}</td>
       <td>
         <a href="/secret/admin/special/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
         <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
       </td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 @endsection

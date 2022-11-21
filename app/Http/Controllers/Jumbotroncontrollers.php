@@ -11,7 +11,7 @@ class Jumbotroncontrollers extends Controller
     {
         $image = $request->image;
         $validasi = \Validator::make($request->all(), [
-            'image' => 'required|mimes:jpeg,jpg,png|image|max:2048'
+            'image' => 'required|mimes:jpeg,jpg,png|image|max:5048'
         ]);
         if ($validasi->fails()) {
             return view('/admin/jumbotron/create');

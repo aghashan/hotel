@@ -17,9 +17,10 @@
   <tbody>
     @foreach($data as $d)
     <tr>
-      <td><img src="" alt="" class="img-thumbnail img-responsive" width="100" height="50"></td>
       <td>
-        p
+      <img src="{{asset('/storage/' . $d->image)}}" alt="" class="img-thumbnail img-responsive" width="200" height="80">
+    </td>
+      <td>
         <a href="/secret/admin/jumbotron/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
         <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
       </td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Models\jumbotron;
 use App\Models\User;
+use App\Models\Special;
 use Illuminate\Http\Request;
 
 class Admincontrollers extends Controller
@@ -19,7 +20,8 @@ class Admincontrollers extends Controller
     }
     public function special()
     {
-        return view('/admin/special/index');
+        $data = special::all();
+        return view('/admin/special/index')->with('data',$data);
     }
     public function jumbotron()
     {

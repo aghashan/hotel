@@ -9,20 +9,20 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('admin/room*') ? 'active' : '' }}" href="/secret/admin/room">
+        <a class="nav-link {{ Request::is('secret/admin/room*') ? 'active' : '' }}" href="/secret/admin/room">
           <span data-feather="home" class="align-text-bottom"></span>
           <i class="fa-solid fa-bed-empty"></i>
           Rooms
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('admin/special*') ? 'active' : '' }}" aria-current="page" href="/secret/admin/special">
+        <a class="nav-link {{ Request::is('secret/admin/special*') ? 'active' : '' }}" aria-current="page" href="/secret/admin/special">
           <span data-feather="file-text" class="align-text-bottom"></span>
           Special Overs
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('admin/jumbotron*') ? 'active' : '' }}" href="/secret/admin/jumbotron">
+        <a class="nav-link {{ Request::is('/secret/admin/jumbotron*') ? 'active' : '' }}" href="/secret/admin/jumbotron">
           <span data-feather="file-text" class="align-text-bottom"></span>
           
           Jumbotron
