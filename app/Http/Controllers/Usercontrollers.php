@@ -74,11 +74,12 @@ class usercontrollers extends Controller
         return view('/admin/user/edit');
     }
 
-    public function destroy($id)
-    {
-        $grup = User::where('id', $id)->delete();
-        if ($grup) {
-            return redirect('/secret/admin/usermanage');
-        }
+    
+    public function destroy( $id){
+        $room = User::where('id', $id);
+        
+        $room->delete();
+    
+        return redirect('/secret/admin/usermanage');
     }
 }

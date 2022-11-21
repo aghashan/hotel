@@ -5,7 +5,7 @@
         <h1 class="h2">Jumbotron</h1>
     </div>
     <div class="col-lg-3">
-        <form method="post" action="/secret/admin/jumbotron/store" enctype="multipart/form-data">
+        <form method="post" action="/secret/admin/jumbotron/create" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="image" class="form-label">Gambar</label>

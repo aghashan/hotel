@@ -34,7 +34,9 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
             Route::get('/edit', 'App\Http\Controllers\Roomscontrollers@edit');
-            Route::get('/add', 'App\Http\Controllers\Roomscontrollers@create');
+            Route::post('/create', 'App\Http\Controllers\Roomscontrollers@store');
+            Route::get('/create', 'App\Http\Controllers\Roomscontrollers@store');
+            Route::delete('/delete/{id}','App\Http\Controllers\Roomscontrollers@destroy');
         });
         Route::group(['prefix' => 'special'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@special');
@@ -44,15 +46,16 @@ Route::group(['prefix' => 'secret'], function () {
         Route::group(['prefix' => 'jumbotron'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');
             Route::get('/edit', 'App\Http\Controllers\Jumbotroncontrollers@edit');
-            Route::post('/store', 'App\Http\Controllers\Jumbotroncontrollers@store')->name('image');
-            Route::get('/store', 'App\Http\Controllers\Jumbotroncontrollers@store')->name('image');
+            Route::post('/create', 'App\Http\Controllers\Jumbotroncontrollers@store');
+            Route::get('/create', 'App\Http\Controllers\Jumbotroncontrollers@store');
+            Route::delete('/delete/{id}','App\Http\Controllers\Jumbotroncontrollers@destroy');
         });
         Route::group(['prefix' => 'usermanage'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
             Route::get('/edit', 'App\Http\Controllers\Usercontrollers@edit');
             Route::post('/create', 'App\Http\Controllers\Usercontrollers@create');
             Route::get('/create', 'App\Http\Controllers\Usercontrollers@create');
-            Route::get('/delete/{id}', 'App\Http\Controllers\Usercontrollers@destroy');
+            Route::delete('/delete/{id}', 'App\Http\Controllers\Usercontrollers@destroy');
         });
     });
 
