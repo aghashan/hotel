@@ -8,7 +8,7 @@
 </div>
 <table class="table table-bordered">
     <thead>
-       
+
         <tr>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($data as $d)
+        @foreach($data as $d)
         <tr>
             <td>{{$d['username']}}</td>
             <td>{{$d['email']}}</td>
@@ -28,7 +28,11 @@
             <td>{{$d['no_tlp']}}</td>
             <td>
                 <a href="/secret/admin/usermanage/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
-                <a href="/secret/admin/usermanage/delete/{{$d['id']}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                <form action="/secret/admin/usermanage/delete/{{$d['id']}}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </form>
             </td>
         </tr>
         @endforeach
