@@ -56,6 +56,7 @@ class usercontrollers extends Controller
             'email' => 'required',
             'username' => 'required|unique:users',
             'password' => 'required',
+            
         ]);
         if ($validasi->fails()) {
             return view('/admin/user/create');

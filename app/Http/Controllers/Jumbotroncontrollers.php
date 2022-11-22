@@ -28,9 +28,26 @@ class Jumbotroncontrollers extends Controller
         }
         return view('/secret/admin/jumbotron');
     }
-    public function edit()
+    public function edit(Request $request,$id)
     {
-        return view('/admin/jumbotron/edit');
+       
+        $validasi = \Validator::make($request->all(), [
+            'image' => 'required|mimes:jpeg,jpg,png|image|max:5048'
+        ]);
+        if ($validasi->fails()) {
+            return redirect('secret/admin/jumbotron/edit/'.$id);
+        } else {
+            if ($request->hasfile('image')) {
+                $path = $request->file('image')->store('images');
+            } else {
+                $path = '';
+            }
+            $p = jumbotron::find($id);
+            $p->image = $path;
+            $p->save();
+            return redirect('/secret/admin/jumbotron');
+        }
+        return view('/secret/admin/jumbotron');
     }
 
     public function destroy($id)

@@ -5,11 +5,12 @@
         <h1 class="h2">Edit Jumbotron</h1>
     </div>
     <div class="col-lg-3">
-        <form method="room" action="/admin/room">
+        <form method="post" action="" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="formFile" class="form-label">Gambar</label>
-              <input class="form-control" type="file" id="formFile">
+              <img src="{{asset('/storage/' . $data->image)}}" alt=""  class="img-thumbnail img-responsive" width="200" height="80">
+              <input class="form-control" type="file" name="image" id="image">
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
       </form>  

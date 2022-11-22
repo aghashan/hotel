@@ -21,7 +21,7 @@
       <img src="{{asset('/storage/' . $d->image)}}" alt="" class="img-thumbnail img-responsive" width="200" height="80">
     </td>
       <td>
-        <a href="/secret/admin/jumbotron/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+        <a href="/secret/admin/jumbotron/edit/{{$d['id']}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
         <form action="/secret/admin/jumbotron/delete/{{$d['id']}}" method="post">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}
