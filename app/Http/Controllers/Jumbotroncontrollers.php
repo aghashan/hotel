@@ -44,7 +44,7 @@ class Jumbotroncontrollers extends Controller
             }
             $p = jumbotron::find($id);
             $p->image = $path;
-            $p->save();
+            $p->save();                                                
             return redirect('/secret/admin/jumbotron');
         }
         return view('/secret/admin/jumbotron');
