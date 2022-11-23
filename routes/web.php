@@ -31,7 +31,6 @@ Route::get('/logout','App\Http\Controllers\Usercontrollers@logout');
 
 Route::group(['prefix' => 'secret'], function () {
     Route::group(['prefix' => 'admin'], function () {
-        Route::post('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
         Route::get('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
         Route::get('/','\App\Http\Controllers\Admincontrollers@page');
         Route::group(['prefix' => 'room'], function () {

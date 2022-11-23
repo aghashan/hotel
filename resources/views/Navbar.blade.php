@@ -14,14 +14,20 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link m-3" href="/room">Room</a>
-                            </li>
+                            </li class="nav-item">
+                            @if(Auth::check())
+                            <a class="nav-link m-3" href="">
+                                saran
+                            </a>
+                            @else
+                            @endif
                             <li class="nav-item">
                                 @if(Auth::check())
-                                <a class="nav-link m-3" href="/logout">
+                                <a class=" m-3 btn btn-primary" href="/logout">
                                     logout
                                 </a>
                                 @else
-                                <a class="nav-link m-3" href="/login">
+                                <a class=" m-3 btn btn-primary" href="/login">
                                     Login
                                 </a>
                                 @endif
