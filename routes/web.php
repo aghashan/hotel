@@ -26,11 +26,14 @@ Route::get('/userinfo', 'App\Http\Controllers\Usercontrollers@user');
 Route::post('/userlog', 'App\Http\Controllers\Usercontrollers@login');
 Route::post('/regis', 'App\Http\Controllers\Usercontrollers@register');
 Route::get('/regis', 'App\Http\Controllers\Usercontrollers@register');
+Route::get('/logout','App\Http\Controllers\Usercontrollers@logout');
 
 
 Route::group(['prefix' => 'secret'], function () {
     Route::group(['prefix' => 'admin'], function () {
-        Route::get('/', 'App\Http\Controllers\Admincontrollers@page');
+        Route::post('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
+        Route::get('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
+        Route::get('/','\App\Http\Controllers\Admincontrollers@page');
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
             Route::post('/edit/{id}', 'App\Http\Controllers\Roomscontrollers@edit');

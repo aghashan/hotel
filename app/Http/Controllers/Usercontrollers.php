@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 class usercontrollers extends Controller
@@ -21,7 +22,7 @@ class usercontrollers extends Controller
             'password' => $request['password']
         ];
         if (Auth::attempt($data)) {
-            return redirect('/room');
+            return redirect('/');
         } else {
             return redirect('/login');
         }
@@ -43,6 +44,7 @@ class usercontrollers extends Controller
             $user->email = $request['email'];
             $user->username = $request['username'];
             $user->password = Hash::make($request['password']);
+            $user->role = ("admin");
             $user->save();
             return redirect('/login');
         }
@@ -50,13 +52,13 @@ class usercontrollers extends Controller
 
     public function create(Request $request)
     {
-    
+
         $validasi = \Validator::make($request->all(), [
             'no_tlp' => 'required',
             'email' => 'required',
             'username' => 'required|unique:users',
             'password' => 'required',
-            
+
         ]);
         if ($validasi->fails()) {
             return view('/admin/user/create');
@@ -75,12 +77,19 @@ class usercontrollers extends Controller
         return view('/admin/user/edit');
     }
 
-    
-    public function destroy( $id){
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('/login');
+    }
+   
+    public function destroy($id)
+    {
         $room = User::where('id', $id);
-        
+
         $room->delete();
-    
+
         return redirect('/secret/admin/usermanage');
     }
 }

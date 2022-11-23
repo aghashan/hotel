@@ -16,7 +16,15 @@
                                 <a class="nav-link m-3" href="/room">Room</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link m-3" href="/login">Login</a>
+                                @if(Auth::check())
+                                <a class="nav-link m-3" href="/logout">
+                                    logout
+                                </a>
+                                @else
+                                <a class="nav-link m-3" href="/login">
+                                    Login
+                                </a>
+                                @endif
                             </li>
                         </ul>
                     </div>
