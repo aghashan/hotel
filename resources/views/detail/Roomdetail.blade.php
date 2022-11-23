@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6 mt-5">
-            <img src="{{$data['gambar']}}" alt="duluxe room" loading="lazy" style="width:100%;" >
+            <img src="{{asset('/storage/'.$data->gambar)}}" alt="duluxe room" loading="lazy" style="width:100%;" >
         </div>
         <div class="col-6 mt-5">
             <div>

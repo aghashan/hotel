@@ -9,7 +9,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <picture>
-                                    <img src="{{$data['gambar']}}" class="img-fluid " alt="">
+                                    <img src="{{asset('/storage/'.$data->gambar)}}" class="img-fluid " alt="">
                                 </picture>
                                 <div class="card-body">
                                     <div class="mb-3">
