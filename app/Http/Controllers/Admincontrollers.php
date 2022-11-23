@@ -33,6 +33,16 @@ class Admincontrollers extends Controller
         $data = jumbotron::find($id);
         return view('/admin/jumbotron/edit')->with('data',$data);
     }
+    public function editroom($id)
+    {
+        $data = room::find($id);
+        return view('/admin/room/edit')->with('data',$data);
+    }
+    public function editspecial($id)
+    {
+        $data = special::find($id);
+        return view('/admin/special/edit')->with('data',$data);
+    }
     public function usermanage(){
         $data = user::all();
         return view('/admin/user/index')->with('data',$data);

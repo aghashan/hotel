@@ -40,7 +40,7 @@
           <td>{{$d['total_room']}}</td>
           <td>{{$d['status']}}</td>
           <td>
-            <a href="/secret/admin/room/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+            <a href="/secret/admin/room/edit/{{$d['id']}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
             <form action="/secret/admin/room/delete/{{$d['id']}}" method="post">
               {{ csrf_field() }}
               {{ method_field('DELETE') }}

@@ -42,18 +42,12 @@
                 <h2>Special Offers</h2>
 
                 <div class="row mt-5">
+                    @foreach($special as $s)
                     <div class="col ">
-                        <img src="https://i.ytimg.com/vi/UQmY0WSPBUE/maxresdefault.jpg" class="img-thumbnail" alt="..." style="width:350px;">
-                        <p>harga miring</p>
+                        <img src="{{asset('/storage/'.$s->image)}}" class="img-thumbnail" alt="..." style="width:350px;">
+                        <p>{{$s->deskripsi}}</p>
                     </div>
-                    <div class="col ">
-                        <img src="https://i.ytimg.com/vi/UQmY0WSPBUE/maxresdefault.jpg" class="img-thumbnail" alt="..." style="width:350px;">
-                        <p>harga miring</p>
-                    </div>
-                    <div class="col ">
-                        <img src="https://i.ytimg.com/vi/UQmY0WSPBUE/maxresdefault.jpg" class="img-thumbnail" alt="..." style="width:350px;">
-                        <p>harga miring</p>
-                    </div>
+                   @endforeach
                 </div>
             </div>
         </div>

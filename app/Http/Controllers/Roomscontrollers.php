@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Session;
 use App\Models\Room;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
@@ -64,9 +64,44 @@ class Roomscontrollers extends Controller
         return redirect('/secret/admin/room');
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request,$id)
     {
-        return view('/admin/room/edit');
+        $validasi = \Validator::make($request->all(), [
+            'room_name'=>'required',
+            'no_room'=>'required',
+            'deskripsi'=>'required',
+            'harga'=>'required',
+            'jenis_kamar'=>'required',
+            'total_room'=>'required',
+            'kapasitas'=>'required',
+            'bed'=>'required',
+            'status'=>'required',
+            'gambar' => 'mimes:jpeg,jpg,png|image|max:5048'
+        ]);
+        if ($validasi->fails()) {
+            return redirect('secret/admin/room/edit/'.$id);
+        } else {
+            $p = room::find($id);
+            if ($request->hasfile('gambar')) {
+                $path = $request->file('gambar')->store('images');
+            } else {
+                $path = $p->gambar;
+            }
+            $p->room_name =$request['room_name'];
+            $p->no_room =$request['no_room'];
+            $p->deskripsi =$request['deskripsi'];
+            $p->harga =$request['harga'];
+            $p->jenis_kamar =$request['jenis_kamar'];
+            $p->total_room =$request['total_room'];
+            $p->kapasitas =$request['kapasitas'];
+            $p->bed =$request['bed'];
+            $p->status =$request['status'];
+            $p->gambar = $path;
+            $p->save();                                                
+            return redirect('/secret/admin/room');
+        }
+        return view('/secret/admin/room');
+
     }
 
     public function destroy($id)

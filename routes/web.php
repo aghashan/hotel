@@ -33,16 +33,19 @@ Route::group(['prefix' => 'secret'], function () {
         Route::get('/', 'App\Http\Controllers\Admincontrollers@page');
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
-            Route::get('/edit', 'App\Http\Controllers\Roomscontrollers@edit');
+            Route::post('/edit/{id}', 'App\Http\Controllers\Roomscontrollers@edit');
+            Route::get('/edit/{id}', 'App\Http\Controllers\Admincontrollers@editroom');
             Route::post('/create', 'App\Http\Controllers\Roomscontrollers@store');
             Route::get('/create', 'App\Http\Controllers\Roomscontrollers@store');
             Route::delete('/delete/{id}','App\Http\Controllers\Roomscontrollers@destroy');
         });
         Route::group(['prefix' => 'special'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@special');
-            Route::get('/edit', 'App\Http\Controllers\Specialcontroller@edit');
+            Route::post('/edit/{id}','App\Http\Controllers\Specialcontroller@edit');
+            Route::get('/edit/{id}', 'App\Http\Controllers\Admincontrollers@editspecial');
             Route::post('/create', 'App\Http\Controllers\Specialcontroller@store');
             Route::get('/create', 'App\Http\Controllers\Specialcontroller@store');
+            Route::delete('/delete/{id}','App\Http\Controllers\Specialcontroller@destroy');
         });
         Route::group(['prefix' => 'jumbotron'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@jumbotron');
