@@ -27,7 +27,7 @@
             <td>role</td>
             <td>{{$d['no_tlp']}}</td>
             <td>
-                <a href="/secret/admin/usermanage/edit" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                <a href="/secret/admin/usermanage/edit/{{$d['id']}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
                 <form action="/secret/admin/usermanage/delete/{{$d['id']}}" method="post">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}

@@ -14,7 +14,20 @@ class Admincontrollers extends Controller
 {
     public function loginadmin(Request $request)
     {
-        return view ('/admin/login');
+
+        $data = [
+            'username' => $request['username'],
+            'password' => $request['password'],
+            'role'=>'admin'
+        ];
+        if (Auth::attempt($data)) {
+            return redirect('/secret/admin');
+        } else {
+            return redirect('/secret/admin/login');
+        }
+    }
+    public function vlogin(){
+        return view('/admin/login');
     }
     public function page()
     {
@@ -44,6 +57,10 @@ class Admincontrollers extends Controller
     {
         $data = room::find($id);
         return view('/admin/room/edit')->with('data', $data);
+    }
+    public function edituser($id){
+        $data = user::find($id);
+        return view('/admin/user/edit')->with('data',$data);
     }
     public function editspecial($id)
     {

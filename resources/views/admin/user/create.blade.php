@@ -24,6 +24,13 @@
             <input type="text" class="form-control" id="name" name="email">
         </div>
         <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Role</label>
+            <select name="role" id="disabledSelect" class="form-select">
+              <option value="" seleted></option>
+              <option value="member">member</option>
+              <option value="admin">admin</option>
+            </select>
+        <div class="mb-3">
             <label for="name" class="form-label">Password</label>
             <input type="text" class="form-control" id="name" name="password">
         </div>

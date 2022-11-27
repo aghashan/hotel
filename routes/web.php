@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Jumbotroncontrollers;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +14,9 @@ use App\Http\Controllers\Jumbotroncontrollers;
 */
 
 
-Route::get('/', 'App\Http\Controllers\Indexcontrollers@home')->middleware('auth');
+Route::get('/', 'App\Http\Controllers\Indexcontrollers@home');
 
-Route::get('/login', 'App\Http\Controllers\Indexcontrollers@login')->name('login');
+Route::get('/login', 'App\Http\Controllers\Indexcontrollers@login');
 Route::post('/login', 'App\Http\Controllers\Indexcontrollers@authenticate');
 
 Route::group(['prefix' => '/room'], function () {
@@ -34,7 +33,9 @@ Route::get('/logout','App\Http\Controllers\Usercontrollers@logout');
 
 Route::group(['prefix' => 'secret'], function () {
     Route::group(['prefix' => 'admin'], function () {
-        Route::get('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
+        Route::post('/login', 'App\Http\Controllers\Admincontrollers@loginadmin');
+        Route::get('/login', 'App\Http\Controllers\Admincontrollers@vlogin');
+        Route::group(['middleware' => ['web', 'admin']],function(){
         Route::get('/','\App\Http\Controllers\Admincontrollers@page');
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
@@ -61,12 +62,15 @@ Route::group(['prefix' => 'secret'], function () {
             Route::delete('/delete/{id}','App\Http\Controllers\Jumbotroncontrollers@destroy');
         });
         Route::group(['prefix' => 'usermanage'], function () {
-            Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');
-            Route::get('/edit', 'App\Http\Controllers\Usercontrollers@edit');
+            Route::get('/', 'App\Http\Controllers\Admincontrollers@usermanage');    
+            Route::post('/edit/{id}', 'App\Http\Controllers\Usercontrollers@edit');
+            Route::get('/edit/{id}', 'App\Http\Controllers\Admincontrollers@edituser');
             Route::post('/create', 'App\Http\Controllers\Usercontrollers@create');
             Route::get('/create', 'App\Http\Controllers\Usercontrollers@create');
             Route::delete('/delete/{id}', 'App\Http\Controllers\Usercontrollers@destroy');
         });
+    });
+
     });
 
    
