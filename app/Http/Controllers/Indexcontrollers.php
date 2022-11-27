@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\jumbotron;
 use App\Models\Special;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Indexcontrollers extends Controller
 {
@@ -22,4 +23,5 @@ class Indexcontrollers extends Controller
     {
         return view('/content/login');
     }
+
 }

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Jumbotroncontrollers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Jumbotroncontrollers;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Indexcontrollers@home');
 
-Route::get('/login', 'App\Http\Controllers\Indexcontrollers@login');
+Route::get('/', 'App\Http\Controllers\Indexcontrollers@home')->middleware('auth');
+
+Route::get('/login', 'App\Http\Controllers\Indexcontrollers@login')->name('login');
+Route::post('/login', 'App\Http\Controllers\Indexcontrollers@authenticate');
+
 Route::group(['prefix' => '/room'], function () {
     Route::get('/', 'App\Http\Controllers\Roomscontrollers@room');
     Route::get('/roomdetail', 'App\Http\Controllers\Roomscontrollers@viewroom');
@@ -68,3 +71,6 @@ Route::group(['prefix' => 'secret'], function () {
 
    
 });
+
+
+

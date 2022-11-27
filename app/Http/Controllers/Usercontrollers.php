@@ -44,7 +44,7 @@ class usercontrollers extends Controller
             $user->email = $request['email'];
             $user->username = $request['username'];
             $user->password = Hash::make($request['password']);
-            $user->role = ("admin");
+            $user->role = ("member");
             $user->save();
             return redirect('/login');
         }

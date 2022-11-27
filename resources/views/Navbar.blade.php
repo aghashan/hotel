@@ -17,9 +17,15 @@
                             </li class="nav-item">
                             @if(Auth::check())
                             <a class="nav-link m-3" href="">
+                                Review
+                            </a>
+                            <a class="nav-link m-3" href="">
                                 saran
                             </a>
                             @else
+                            <a class="nav-link m-3" href="">
+                                Review
+                            </a>
                             @endif
                             <li class="nav-item">
                                 @if(Auth::check())

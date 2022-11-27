@@ -44,7 +44,7 @@
                 <div class="row mt-5">
                     @foreach($special as $s)
                     <div class="col ">
-                        <img src="{{asset('/storage/'.$s->image)}}" class="img-thumbnail" alt="..." style="width:350px;">
+                        <img src="{{asset('/storage/'.$s->image)}}" class="img-thumbnail img-fluid " alt="..." style="width:350px;">
                         <p>{{$s->deskripsi}}</p>
                     </div>
                    @endforeach

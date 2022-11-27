@@ -2,6 +2,8 @@
 @section('content')
 <div class="container mt-5">
     <div class="row">
+
+
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-5">
             <div class="card border-0 shadow rounded-3 my-5">
                 <div class="card-body p-4 p-sm-5">
@@ -12,6 +14,7 @@
                         <div class="form-floating mb-3">
                             <input type="text" name="username" class="form-control" id="floatingInput" placeholder="username">
                             <label for="floatingInput">username</label>
+                
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
