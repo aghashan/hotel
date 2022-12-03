@@ -37,6 +37,7 @@ Route::group(['prefix' => 'secret'], function () {
         Route::get('/login', 'App\Http\Controllers\Admincontrollers@vlogin');
         Route::group(['middleware' => ['web', 'admin']],function(){
         Route::get('/','\App\Http\Controllers\Admincontrollers@page');
+        Route::get('/logout','\App\Http\Controllers\Admincontrollers@alogout');
         Route::group(['prefix' => 'room'], function () {
             Route::get('/', 'App\Http\Controllers\Admincontrollers@rooms');
             Route::post('/edit/{id}', 'App\Http\Controllers\Roomscontrollers@edit');
