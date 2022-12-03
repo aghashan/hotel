@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class usercontrollers extends Controller
 {
-    public function user()
-    {
-        return view('/detail/userdetail');
-    }
+   
     public function login(Request $request)
     {
 

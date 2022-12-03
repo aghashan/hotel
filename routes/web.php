@@ -24,7 +24,7 @@ Route::group(['prefix' => '/room'], function () {
     Route::get('/roomdetail', 'App\Http\Controllers\Roomscontrollers@viewroom');
     Route::get('/booking', 'App\Http\Controllers\Bookcontrollers@book');
 });
-Route::get('/userinfo', 'App\Http\Controllers\Usercontrollers@user');
+Route::get('/userinfo', 'App\Http\Controllers\Indexcontrollers@user');
 Route::post('/userlog', 'App\Http\Controllers\Usercontrollers@login');
 Route::post('/regis', 'App\Http\Controllers\Usercontrollers@register');
 Route::get('/regis', 'App\Http\Controllers\Usercontrollers@register');

@@ -11,20 +11,21 @@
       <li class="nav-item">
         <a class="nav-link {{ Request::is('secret/admin/room*') ? 'active' : '' }}" href="/secret/admin/room">
           <span data-feather="home" class="align-text-bottom"></span>
-          <i class="fa-solid fa-bed-empty"></i>
+          <i class="fa-sharp fa-solid fa-bed"></i>
           Rooms
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ Request::is('secret/admin/special*') ? 'active' : '' }}" aria-current="page" href="/secret/admin/special">
           <span data-feather="file-text" class="align-text-bottom"></span>
+          <i class="fa-solid fa-credit-card"></i>
           Special Overs
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ Request::is('/secret/admin/jumbotron*') ? 'active' : '' }}" href="/secret/admin/jumbotron">
           <span data-feather="file-text" class="align-text-bottom"></span>
-          
+          <i class="fa-solid fa-image"></i>
           Jumbotron
         </a>
       </li>

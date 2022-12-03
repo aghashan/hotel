@@ -18,7 +18,7 @@ class Checkuser
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check() || Auth::user()->role !== "admin") {
-            return redirect('/');
+            return redirect('/secret/admin/login');
         }
         return $next($request);
 
